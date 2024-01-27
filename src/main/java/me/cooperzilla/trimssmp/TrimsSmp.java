@@ -17,6 +17,7 @@ public class TrimsSmp extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new Rib(), this);
         getServer().getPluginManager().registerEvents(new Wild(), this);
         getServer().getPluginManager().registerEvents(new Spire(), this);
+        getServer().getPluginManager().registerEvents(new Eye(), this);
 
         getLogger().info("Listeners Registered!!!");
 
