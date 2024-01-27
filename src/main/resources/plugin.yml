@@ -2,8 +2,3 @@ name: TrimsSmp
 version: '${project.version}'
 main: me.cooperzilla.trimssmp.TrimsSmp
 api-version: '1.20'
-depend: [NBTAPI]
-commands:
-  debug:
-    description: ttt
-    usage: "/debug <args>"
