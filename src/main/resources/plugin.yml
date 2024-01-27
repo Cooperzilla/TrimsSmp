@@ -2,3 +2,4 @@ name: TrimsSmp
 version: '${project.version}'
 main: me.cooperzilla.trimssmp.TrimsSmp
 api-version: '1.20'
+folia-supported: true
