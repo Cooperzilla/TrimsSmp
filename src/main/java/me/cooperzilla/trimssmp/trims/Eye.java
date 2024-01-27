@@ -2,6 +2,7 @@ package me.cooperzilla.trimssmp.trims;
 
 import me.cooperzilla.trimssmp.utils.CheaksUtils;
 import me.cooperzilla.trimssmp.utils.ColorUtils;
+import me.cooperzilla.trimssmp.utils.CooldownUtils;
 import org.bukkit.Color;
 import org.bukkit.entity.EnderPearl;
 import org.bukkit.entity.Player;
@@ -36,9 +37,10 @@ public class Eye implements Listener {
 
         if (CheaksUtils.hasTrim(item, num) && (player.isSwimming() || player.getWorld().hasStorm() || player.getWorld().isThundering())) {
             if (event.getAction().name().contains("RIGHT_CLICK")) {
-                if (!(player.hasMetadata("spire_cooldown"))) {
+                if (!(player.hasMetadata("eye_cooldown"))) {
 
                     player.launchProjectile(EnderPearl.class, player.getLocation().getDirection());
+                    CooldownUtils.setCooldown(player, "eye_cooldown", COOLDOWN_DURATION);
 
                 } else {
                     player.sendMessage("Ability on cooldown!");
