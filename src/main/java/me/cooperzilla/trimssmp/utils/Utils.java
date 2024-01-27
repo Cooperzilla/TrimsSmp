@@ -1,5 +1,6 @@
-package me.cooperzilla.trimssmp;
+package me.cooperzilla.trimssmp.utils;
 
+import me.cooperzilla.trimssmp.TrimsSmp;
 import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -13,7 +14,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 import java.util.Arrays;
 
 public class Utils {
-    static boolean isOre(Material material) {
+    public static boolean isOre(Material material) {
         return (
                 material == Material.AMETHYST_SHARD || // Adjust ore materials as needed
                 material == Material.COPPER_INGOT ||
@@ -28,7 +29,7 @@ public class Utils {
         );
     }
 
-    static Color getColorFromAdjacentOre(InventoryClickEvent event) {
+    public static Color getColorFromAdjacentOre(InventoryClickEvent event) {
         ItemStack[] matrix = ((CraftingInventory) event.getInventory()).getMatrix();
         for (ItemStack item : matrix) {
             if (item != null && isOre(item.getType())) {
@@ -50,7 +51,7 @@ public class Utils {
         return null;
     }
 
-    static void applyColor(ItemStack item, Color color, Integer num) {
+    public static void applyColor(ItemStack item, Color color, Integer num) {
         Integer offset = 0;
 
         if (color.equals(Color.PURPLE)) {
@@ -76,13 +77,13 @@ public class Utils {
         item.getItemMeta().setCustomModelData(num + offset);
     }
 
-    static boolean hasTrim(ItemStack item, Integer num) {
+    public static boolean hasTrim(ItemStack item, Integer num) {
         return  item.hasItemMeta() &&
                 item.getItemMeta().hasCustomModelData() &&
                 Arrays.asList(num, num+1, num+2, num+3, num+4, num+5, num+6, num+7, num+8).contains(item.getItemMeta().getCustomModelData());
     }
 
-    static boolean hasCorrectIngredients(CraftItemEvent event, Integer num) {
+    public static boolean hasCorrectIngredients(CraftItemEvent event, Integer num) {
         ItemStack[] matrix = event.getInventory().getMatrix();
         boolean hasTrim = false;
         boolean hasOre = false;
@@ -100,7 +101,7 @@ public class Utils {
         return hasTrim && hasOre;
     }
 
-    static void setCooldown(Player player, String str, Long cooldown) {
+    public static void setCooldown(Player player, String str, Long cooldown) {
         player.setMetadata(str, new FixedMetadataValue(new TrimsSmp(), true));
 
         new BukkitRunnable() {

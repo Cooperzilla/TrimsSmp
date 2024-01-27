@@ -1,5 +1,6 @@
-package me.cooperzilla.trimssmp;
+package me.cooperzilla.trimssmp.crafting;
 
+import me.cooperzilla.trimssmp.TrimsSmp;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.Tag;

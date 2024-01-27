@@ -1,6 +1,6 @@
-package me.cooperzilla.trimssmp;
+package me.cooperzilla.trimssmp.trims;
 
-import org.bukkit.ChatColor;
+import me.cooperzilla.trimssmp.utils.Utils;
 import org.bukkit.Color;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
@@ -12,7 +12,7 @@ import org.bukkit.event.inventory.CraftItemEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 
-import static me.cooperzilla.trimssmp.Utils.applyColor;
+import static me.cooperzilla.trimssmp.utils.Utils.applyColor;
 
 public class Ward implements Listener {
 

@@ -1,6 +1,7 @@
-package me.cooperzilla.trimssmp;
+package me.cooperzilla.trimssmp.trims;
 
-import org.bukkit.ChatColor;
+import me.cooperzilla.trimssmp.TrimsSmp;
+import me.cooperzilla.trimssmp.utils.Utils;
 import org.bukkit.Color;
 import org.bukkit.Location;
 import org.bukkit.World;
@@ -14,7 +15,7 @@ import org.bukkit.inventory.ItemStack;
 
 import java.util.Random;
 
-import static me.cooperzilla.trimssmp.Utils.applyColor;
+import static me.cooperzilla.trimssmp.utils.Utils.applyColor;
 
 public class Rib implements Listener {
 

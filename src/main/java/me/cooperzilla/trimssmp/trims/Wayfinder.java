@@ -1,5 +1,6 @@
-package me.cooperzilla.trimssmp;
+package me.cooperzilla.trimssmp.trims;
 
+import me.cooperzilla.trimssmp.utils.Utils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Color;

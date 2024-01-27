@@ -1,5 +1,6 @@
-package me.cooperzilla.trimssmp;
+package me.cooperzilla.trimssmp.trims;
 
+import me.cooperzilla.trimssmp.utils.Utils;
 import org.bukkit.Color;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -8,7 +9,7 @@ import org.bukkit.event.inventory.CraftItemEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 
-import static me.cooperzilla.trimssmp.Utils.applyColor;
+import static me.cooperzilla.trimssmp.utils.Utils.applyColor;
 
 public class Raiser implements Listener {
 
