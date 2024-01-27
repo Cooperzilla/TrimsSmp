@@ -18,8 +18,8 @@ import java.util.Random;
 
 public class Wild implements Listener {
 
-    private final int num = 37;
-    private final long COOLDOWN_DURATION = 60 * 20;
+    private final int num = 46;
+    private final long COOLDOWN_DURATION = 5 * 60 * 20;
 
     @EventHandler
     public void onCraftItem(CraftItemEvent event) {
