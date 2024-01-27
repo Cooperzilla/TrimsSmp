@@ -39,7 +39,7 @@ public class Wayfinder implements Listener {
                     revealNearestPlayer(player);
                     Utils.setCooldown(player, "wayfinder_cooldown", COOLDOWN_DURATION);
                 } else {
-                    player.sendMessage(ChatColor.RED + "Wayfinder Trim: " + ChatColor.WHITE + "You must wait before tracking again.");
+                    player.sendMessage("Ability on cooldown!");
                 }
             }
         }
@@ -60,7 +60,7 @@ public class Wayfinder implements Listener {
         if (nearestPlayer != null) {
             player.sendMessage(ChatColor.GREEN + "Nearest player found at: " + ChatColor.WHITE + nearestPlayer.getLocation().getBlockX() + ", " + nearestPlayer.getLocation().getBlockY() + ", " + nearestPlayer.getLocation().getBlockZ());
         } else {
-            player.sendMessage(ChatColor.RED + "No player found within tracking range.");
+            player.sendMessage(ChatColor.RED + "No player found within tracking range");
         }
     }
 }

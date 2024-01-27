@@ -42,7 +42,7 @@ public class CoastTrim implements Listener {
                     Utils.setCooldown(player, "coast_cooldown", COOLDOWN_DURATION);
 
                 } else {
-                    player.sendMessage("You must wait before dashing again.");
+                    player.sendMessage("Ability on cooldown!");
                 }
             }
         }

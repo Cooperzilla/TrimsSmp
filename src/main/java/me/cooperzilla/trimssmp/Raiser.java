@@ -42,7 +42,7 @@ public class Raiser implements Listener {
                     player.setVelocity(player.getLocation().getDirection().multiply(DASH_DISTANCE));
                     Utils.setCooldown(player, "raiser_cooldown", COOLDOWN_DURATION);;
                 } else {
-                    player.sendMessage("You must wait before dashing again.");
+                    player.sendMessage("Ability on cooldown!");
                 }
             }
         }
