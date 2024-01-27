@@ -1,7 +1,5 @@
 package me.cooperzilla.trimssmp.trims;
 
-import com.google.common.collect.Multimap;
-import me.cooperzilla.trimssmp.misc.customArrow;
 import me.cooperzilla.trimssmp.utils.CheaksUtils;
 import me.cooperzilla.trimssmp.utils.ColorUtils;
 import me.cooperzilla.trimssmp.utils.CooldownUtils;
@@ -18,7 +16,7 @@ import org.bukkit.inventory.ItemStack;
 
 import java.util.UUID;
 
-public class Tbd implements Listener {
+public class Dune implements Listener {
 
     private final int num = NumUtils.getNum(10);
     private final long COOLDOWN_DURATION = NumUtils.seconds(20);
@@ -47,7 +45,7 @@ public class Tbd implements Listener {
 
         if (CheaksUtils.hasTrim(item, num)) {
             if (event.getAction().name().contains("RIGHT_CLICK")) {
-                if (!(player.hasMetadata("sentry_cooldown"))) {
+                if (!(player.hasMetadata("dune_cooldown"))) {
 
                     AttributeModifier modifier = new AttributeModifier(
                             UUID.randomUUID(),
@@ -68,7 +66,7 @@ public class Tbd implements Listener {
                     item.getItemMeta().addAttributeModifier(Attribute.GENERIC_ATTACK_SPEED, negative_modifier);
 
 
-                    CooldownUtils.setCooldown(player, "sentry_cooldown", COOLDOWN_DURATION);
+                    CooldownUtils.setCooldown(player, "dune_cooldown", COOLDOWN_DURATION);
 
                 } else {
                     player.sendMessage("Ability on cooldown!");
