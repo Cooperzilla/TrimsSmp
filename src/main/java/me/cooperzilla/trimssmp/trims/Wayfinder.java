@@ -56,7 +56,6 @@ public class Wayfinder implements Listener {
                 double distance = player.getLocation().distance(other.getLocation());
                 if (distance <= nearestDistance) {
                     nearestPlayer = other;
-                    nearestDistance = distance;
                 }
             }
         }
