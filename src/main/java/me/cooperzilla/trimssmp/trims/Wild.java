@@ -3,6 +3,7 @@ package me.cooperzilla.trimssmp.trims;
 import me.cooperzilla.trimssmp.utils.CheaksUtils;
 import me.cooperzilla.trimssmp.utils.ColorUtils;
 import me.cooperzilla.trimssmp.utils.CooldownUtils;
+import me.cooperzilla.trimssmp.utils.NumUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Color;
@@ -18,8 +19,8 @@ import java.util.Random;
 
 public class Wild implements Listener {
 
-    private final int num = 46;
-    private final long COOLDOWN_DURATION = 5 * 60 * 20;
+    private final int num = NumUtils.getNum(6);
+    private final long COOLDOWN_DURATION = NumUtils.minutes(5);
 
     @EventHandler
     public void onCraftItem(CraftItemEvent event) {

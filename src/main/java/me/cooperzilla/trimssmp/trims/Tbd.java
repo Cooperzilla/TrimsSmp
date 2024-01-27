@@ -5,6 +5,7 @@ import me.cooperzilla.trimssmp.misc.customArrow;
 import me.cooperzilla.trimssmp.utils.CheaksUtils;
 import me.cooperzilla.trimssmp.utils.ColorUtils;
 import me.cooperzilla.trimssmp.utils.CooldownUtils;
+import me.cooperzilla.trimssmp.utils.NumUtils;
 import org.bukkit.Color;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeModifier;
@@ -19,8 +20,8 @@ import java.util.UUID;
 
 public class Tbd implements Listener {
 
-    private final int num = 73;
-    private final long COOLDOWN_DURATION = 20 * 20;
+    private final int num = NumUtils.getNum(10);
+    private final long COOLDOWN_DURATION = NumUtils.seconds(20);
 
     @EventHandler
     public void onCraftItem(CraftItemEvent event) {

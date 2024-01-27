@@ -3,6 +3,7 @@ package me.cooperzilla.trimssmp.trims;
 import me.cooperzilla.trimssmp.utils.CheaksUtils;
 import me.cooperzilla.trimssmp.utils.ColorUtils;
 import me.cooperzilla.trimssmp.utils.CooldownUtils;
+import me.cooperzilla.trimssmp.utils.NumUtils;
 import org.bukkit.Color;
 import org.bukkit.entity.EnderPearl;
 import org.bukkit.entity.Player;
@@ -14,8 +15,8 @@ import org.bukkit.inventory.ItemStack;
 
 public class Eye implements Listener {
 
-    private final int num = 64;
-    private final long COOLDOWN_DURATION = 30 * 20;
+    private final int num = NumUtils.getNum(8);
+    private final long COOLDOWN_DURATION = NumUtils.seconds(30);
 
     @EventHandler
     public void onCraftItem(CraftItemEvent event) {

@@ -4,6 +4,7 @@ import me.cooperzilla.trimssmp.TrimsSmp;
 import me.cooperzilla.trimssmp.utils.CheaksUtils;
 import me.cooperzilla.trimssmp.utils.ColorUtils;
 import me.cooperzilla.trimssmp.utils.CooldownUtils;
+import me.cooperzilla.trimssmp.utils.NumUtils;
 import org.bukkit.Color;
 import org.bukkit.Location;
 import org.bukkit.World;
@@ -19,8 +20,8 @@ import java.util.Random;
 
 public class Rib implements Listener {
 
-    private final int num = 37;
-    private final long COOLDOWN_DURATION = 60 * 20;
+    private final int num = NumUtils.getNum(5);
+    private final long COOLDOWN_DURATION = NumUtils.minutes(1);
 
     @EventHandler
     public void onCraftItem(CraftItemEvent event) {

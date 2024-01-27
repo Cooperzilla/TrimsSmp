@@ -3,6 +3,7 @@ package me.cooperzilla.trimssmp.trims;
 import me.cooperzilla.trimssmp.utils.CheaksUtils;
 import me.cooperzilla.trimssmp.utils.ColorUtils;
 import me.cooperzilla.trimssmp.utils.CooldownUtils;
+import me.cooperzilla.trimssmp.utils.NumUtils;
 import org.bukkit.Color;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -14,8 +15,8 @@ import org.bukkit.util.Vector;
 
 public class Spire implements Listener {
 
-    private final int num = 55;
-    private final long COOLDOWN_DURATION = 3 * 60 * 20;
+    private final int num = NumUtils.getNum(7);
+    private final long COOLDOWN_DURATION = NumUtils.minutes(10);
 
     @EventHandler
     public void onCraftItem(CraftItemEvent event) {

@@ -3,6 +3,7 @@ package me.cooperzilla.trimssmp.trims;
 import me.cooperzilla.trimssmp.utils.CheaksUtils;
 import me.cooperzilla.trimssmp.utils.ColorUtils;
 import me.cooperzilla.trimssmp.utils.CooldownUtils;
+import me.cooperzilla.trimssmp.utils.NumUtils;
 import org.bukkit.Color;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
@@ -16,7 +17,7 @@ import org.bukkit.inventory.ItemStack;
 
 public class Ward implements Listener {
 
-    private final int num = 19;
+    private final int num = NumUtils.getNum(3);
     private final long COOLDOWN_DURATION = 60 * 20;
 
     @EventHandler

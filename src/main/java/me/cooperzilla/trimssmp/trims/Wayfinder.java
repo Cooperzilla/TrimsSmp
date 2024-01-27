@@ -3,6 +3,7 @@ package me.cooperzilla.trimssmp.trims;
 import me.cooperzilla.trimssmp.utils.CheaksUtils;
 import me.cooperzilla.trimssmp.utils.ColorUtils;
 import me.cooperzilla.trimssmp.utils.CooldownUtils;
+import me.cooperzilla.trimssmp.utils.NumUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Color;
@@ -15,7 +16,7 @@ import org.bukkit.inventory.ItemStack;
 
 public class Wayfinder implements Listener {
 
-    private Integer num = 10;
+    private final Integer num = NumUtils.getNum(2);
     private final long COOLDOWN_DURATION = 60 * 20;;
 
     @EventHandler
