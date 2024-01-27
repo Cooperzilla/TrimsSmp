@@ -33,7 +33,11 @@ public class Raiser implements Listener {
     @EventHandler
     public void onPlayerInteract(PlayerInteractEvent event) {
         Player player = event.getPlayer();
-        ItemStack item = player.getInventory().getItemInMainHand();
+        ItemStack item = event.getItem();
+
+        if (item == null) {
+            return;
+        }
 
         if (CheaksUtils.hasTrim(item, num)) {
             if (event.getAction().name().contains("RIGHT_CLICK")) {
