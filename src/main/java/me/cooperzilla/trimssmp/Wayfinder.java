@@ -10,16 +10,10 @@ import org.bukkit.event.inventory.CraftItemEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import static me.cooperzilla.trimssmp.Utils.applyColor;
-
 public class Wayfinder implements Listener {
 
     private Integer num = 10;
-    private Map<Player, Long> wayfinderCooldowns = new HashMap<>();
-    private final long wayfinderCooldownDuration = 60000;
+    private final long COOLDOWN_DURATION = 60 * 20;;
 
     @EventHandler
     public void onCraftItem(CraftItemEvent event) {
@@ -27,7 +21,7 @@ public class Wayfinder implements Listener {
         if (Utils.hasCorrectIngredients(event, num)) {
                 Color color = Utils.getColorFromAdjacentOre(event);
                 if (color != null) {
-                    applyColor(result, color, num);
+                    Utils.applyColor(result, color, num);
                 }
             } else {
                 event.setCancelled(true);
@@ -41,9 +35,9 @@ public class Wayfinder implements Listener {
 
         if (Utils.hasTrim(item, num)) {
             if (event.getAction().name().contains("RIGHT_CLICK")) {
-                if (!wayfinderCooldowns.containsKey(player) || System.currentTimeMillis() - wayfinderCooldowns.get(player) >= wayfinderCooldownDuration) {
+                if (!(player.hasMetadata("wayfinder_cooldown"))) {
                     revealNearestPlayer(player);
-                    wayfinderCooldowns.put(player, System.currentTimeMillis());
+                    Utils.setCooldown(player, "wayfinder_cooldown", COOLDOWN_DURATION);
                 } else {
                     player.sendMessage(ChatColor.RED + "Wayfinder Trim: " + ChatColor.WHITE + "You must wait before tracking again.");
                 }

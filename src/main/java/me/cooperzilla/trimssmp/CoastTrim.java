@@ -7,8 +7,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.CraftItemEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.metadata.FixedMetadataValue;
-import org.bukkit.scheduler.BukkitRunnable;
 
 import static me.cooperzilla.trimssmp.Utils.applyColor;
 
@@ -38,35 +36,15 @@ public class CoastTrim implements Listener {
 
         if (Utils.hasTrim(item, num) && (player.isSwimming() || player.getWorld().hasStorm() || player.getWorld().isThundering())) {
             if (event.getAction().name().contains("RIGHT_CLICK")) {
-                if (!isOnCooldown(player)) {
-                    dash(player);
-                    startCooldown(player);
+                if (!(player.hasMetadata("coast_cooldown"))) {
+                    player.setVelocity(player.getLocation().getDirection().multiply(DASH_DISTANCE));
+
+                    Utils.setCooldown(player, "coast_cooldown", COOLDOWN_DURATION);
+
                 } else {
                     player.sendMessage("You must wait before dashing again.");
                 }
             }
         }
     }
-    private void dash(Player player) {
-        player.setVelocity(player.getLocation().getDirection().multiply(DASH_DISTANCE));
-    }
-
-    private boolean isOnCooldown(Player player) {
-        // Check if player has cooldown metadata
-        return player.hasMetadata("coast_dash_cooldown");
-    }
-
-    private void startCooldown(Player player) {
-        // Apply cooldown metadata
-        player.setMetadata("coast_dash_cooldown", new FixedMetadataValue(new TrimsSmp(), true));
-
-        // Schedule removal of cooldown metadata after cooldown duration
-        new BukkitRunnable() {
-            @Override
-            public void run() {
-                player.removeMetadata("coast_dash_cooldown", new TrimsSmp());
-            }
-        }.runTaskLater(new TrimsSmp(), COOLDOWN_DURATION);
-    }
 }
-

@@ -12,16 +12,12 @@ import org.bukkit.event.inventory.CraftItemEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import static me.cooperzilla.trimssmp.Utils.applyColor;
 
 public class Ward implements Listener {
 
     private final int num = 19;
-    private Map<Player, Long> wardCooldowns = new HashMap<>();
-    private final long wardCooldownDuration = 60 * 1000; // 1 minute in milliseconds
+    private final long COOLDOWN_DURATION = 60 * 20;
 
     @EventHandler
     public void onCraftItem(CraftItemEvent event) {
@@ -43,10 +39,9 @@ public class Ward implements Listener {
 
         if (Utils.hasTrim(item, num)) {
             if (event.getAction() == Action.RIGHT_CLICK_AIR || event.getAction() == Action.RIGHT_CLICK_BLOCK) {
-                    if (!wardCooldowns.containsKey(player) || System.currentTimeMillis() - wardCooldowns.get(player) >= wardCooldownDuration) {
+                    if (!(player.hasMetadata("ward_cooldown"))) {
                         applySonicBoom(player);
-                        wardCooldowns.put(player, System.currentTimeMillis());
-                        player.sendMessage(ChatColor.GREEN + "Ward Trim: " + ChatColor.WHITE + "Sonic boom unleashed!");
+                        Utils.setCooldown(player, "ward_cooldown", COOLDOWN_DURATION);
                     } else {
                         player.sendMessage(ChatColor.RED + "Ward Trim: " + ChatColor.WHITE + "You must wait before using sonic boom again.");
                 }

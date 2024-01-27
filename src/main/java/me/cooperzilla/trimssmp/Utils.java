@@ -2,10 +2,13 @@ package me.cooperzilla.trimssmp;
 
 import org.bukkit.Color;
 import org.bukkit.Material;
+import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.CraftItemEvent;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.CraftingInventory;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.metadata.FixedMetadataValue;
+import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.Arrays;
 
@@ -95,5 +98,16 @@ public class Utils {
         }
 
         return hasTrim && hasOre;
+    }
+
+    static void setCooldown(Player player, String str, Long cooldown) {
+        player.setMetadata(str, new FixedMetadataValue(new TrimsSmp(), true));
+
+        new BukkitRunnable() {
+            @Override
+            public void run() {
+                player.removeMetadata(str, new TrimsSmp());
+            }
+        }.runTaskLater(new TrimsSmp(), cooldown * player.getMetadata("cooldown_multiplier").get(0).asLong());
     }
 }
