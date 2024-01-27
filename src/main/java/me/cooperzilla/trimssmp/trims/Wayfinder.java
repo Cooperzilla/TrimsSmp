@@ -1,6 +1,8 @@
 package me.cooperzilla.trimssmp.trims;
 
-import me.cooperzilla.trimssmp.utils.Utils;
+import me.cooperzilla.trimssmp.utils.CheaksUtils;
+import me.cooperzilla.trimssmp.utils.ColorUtils;
+import me.cooperzilla.trimssmp.utils.CooldownUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Color;
@@ -19,10 +21,10 @@ public class Wayfinder implements Listener {
     @EventHandler
     public void onCraftItem(CraftItemEvent event) {
         ItemStack result = event.getRecipe().getResult();
-        if (Utils.hasCorrectIngredients(event, num)) {
-                Color color = Utils.getColorFromAdjacentOre(event);
+        if (CheaksUtils.hasCorrectIngredients(event, num)) {
+                Color color = ColorUtils.getColorFromAdjacentOre(event);
                 if (color != null) {
-                    Utils.applyColor(result, color, num);
+                    ColorUtils.applyColor(result, color, num);
                 }
             } else {
                 event.setCancelled(true);
@@ -34,11 +36,11 @@ public class Wayfinder implements Listener {
         Player player = event.getPlayer();
         ItemStack item = player.getInventory().getItemInMainHand();
 
-        if (Utils.hasTrim(item, num)) {
+        if (CheaksUtils.hasTrim(item, num)) {
             if (event.getAction().name().contains("RIGHT_CLICK")) {
                 if (!(player.hasMetadata("wayfinder_cooldown"))) {
                     revealNearestPlayer(player);
-                    Utils.setCooldown(player, "wayfinder_cooldown", COOLDOWN_DURATION);
+                    CooldownUtils.setCooldown(player, "wayfinder_cooldown", COOLDOWN_DURATION);
                 } else {
                     player.sendMessage("Ability on cooldown!");
                 }
