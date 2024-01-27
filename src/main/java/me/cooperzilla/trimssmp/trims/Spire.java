@@ -40,7 +40,7 @@ public class Spire implements Listener {
             return;
         }
 
-        if (CheaksUtils.hasTrim(item, num) && (player.isSwimming() || player.getWorld().hasStorm() || player.getWorld().isThundering())) {
+        if (CheaksUtils.hasTrim(item, num)) {
             if (event.getAction().name().contains("RIGHT_CLICK")) {
                 if (!(player.hasMetadata("spire_cooldown"))) {
 
