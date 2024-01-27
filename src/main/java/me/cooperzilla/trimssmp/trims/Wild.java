@@ -41,9 +41,9 @@ public class Wild implements Listener {
 
         if (CheaksUtils.hasTrim(item, num)) {
             if (event.getAction() == Action.RIGHT_CLICK_AIR || event.getAction() == Action.RIGHT_CLICK_BLOCK) {
-                if (!(player.hasMetadata("rib_cooldown"))) {
+                if (!(player.hasMetadata("wild_cooldown"))) {
                     armorBreak(player);
-                    CooldownUtils.setCooldown(player, "rib_cooldown", COOLDOWN_DURATION);
+                    CooldownUtils.setCooldown(player, "wild_cooldown", COOLDOWN_DURATION);
                 } else {
                     player.sendMessage("Ability on cooldown!");
                 }
