@@ -16,9 +16,9 @@ import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.Arrays;
 
-public class CoastTrim implements Listener {
+public class Raiser implements Listener {
 
-    private final int DASH_DISTANCE = 12;
+    private final int DASH_DISTANCE = 8;
     private final long COOLDOWN_DURATION = 8 * 20; // 8 seconds in ticks
 
 
