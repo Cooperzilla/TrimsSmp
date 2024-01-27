@@ -19,9 +19,9 @@ public class ColorUtils {
                     case LAPIS_LAZULI: return Color.BLUE;
                     case NETHERITE_INGOT: return Color.BLACK;
                     case REDSTONE: return Color.RED;
-                    case IRON_INGOT:
-                    case QUARTZ:
-                        return Color.WHITE;
+                    case IRON_INGOT: return Color.WHITE;
+                    case QUARTZ: return Color.GRAY;
+
                 }
             }
         }
@@ -49,6 +49,8 @@ public class ColorUtils {
             offset = 7;
         } else if (color.equals(Color.WHITE)) {
             offset = 8;
+        } else if (color.equals(Color.GRAY)) {
+            offset = 9;
         }
 
         item.getItemMeta().setCustomModelData(num + offset);

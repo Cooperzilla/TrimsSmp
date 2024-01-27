@@ -3,7 +3,7 @@ package me.cooperzilla.trimssmp.utils;
 public class NumUtils {
     public static int getNum(int num) {
         if (num-1 > 0) {
-            return num + ((num-1) * 9);
+            return (num-1) * 10 + 1;
         } else {
             return 1;
         }

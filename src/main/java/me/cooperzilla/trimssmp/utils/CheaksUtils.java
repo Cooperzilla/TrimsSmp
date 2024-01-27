@@ -25,7 +25,7 @@ public class CheaksUtils {
     public static boolean hasTrim(ItemStack item, Integer num) {
         return  item.hasItemMeta() &&
                 item.getItemMeta().hasCustomModelData() &&
-                Arrays.asList(num, num+1, num+2, num+3, num+4, num+5, num+6, num+7, num+8).contains(item.getItemMeta().getCustomModelData());
+                Arrays.asList(num, num+1, num+2, num+3, num+4, num+5, num+6, num+7, num+8, num+9).contains(item.getItemMeta().getCustomModelData());
     }
 
     public static boolean hasCorrectIngredients(CraftItemEvent event, Integer num) {
