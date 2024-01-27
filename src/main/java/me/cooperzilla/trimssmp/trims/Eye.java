@@ -14,7 +14,7 @@ import org.bukkit.inventory.ItemStack;
 public class Eye implements Listener {
 
     private final int num = 64;
-    private final long COOLDOWN_DURATION = 8 * 20; // 8 seconds in ticks
+    private final long COOLDOWN_DURATION = 30 * 20;
 
     @EventHandler
     public void onCraftItem(CraftItemEvent event) {

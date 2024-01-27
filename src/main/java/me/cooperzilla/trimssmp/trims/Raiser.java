@@ -14,9 +14,7 @@ import org.bukkit.inventory.ItemStack;
 public class Raiser implements Listener {
 
     private final int num = 28;
-
-    private final int DASH_DISTANCE = 8;
-    private final long COOLDOWN_DURATION = 8 * 20; // 8 seconds in ticks
+    private final long COOLDOWN_DURATION = 8 * 20;
 
 
     @EventHandler
@@ -40,7 +38,7 @@ public class Raiser implements Listener {
         if (CheaksUtils.hasTrim(item, num)) {
             if (event.getAction().name().contains("RIGHT_CLICK")) {
                 if (!(player.hasMetadata("raiser_cooldown"))) {
-                    player.setVelocity(player.getLocation().getDirection().multiply(DASH_DISTANCE));
+                    player.setVelocity(player.getLocation().getDirection().multiply(1.5));
                     CooldownUtils.setCooldown(player, "raiser_cooldown", COOLDOWN_DURATION);;
                 } else {
                     player.sendMessage("Ability on cooldown!");

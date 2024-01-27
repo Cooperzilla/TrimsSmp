@@ -15,7 +15,7 @@ import org.bukkit.util.Vector;
 public class Spire implements Listener {
 
     private final int num = 55;
-    private final long COOLDOWN_DURATION = 8 * 20; // 8 seconds in ticks
+    private final long COOLDOWN_DURATION = 3 * 60 * 20;
 
     @EventHandler
     public void onCraftItem(CraftItemEvent event) {
