@@ -8,7 +8,7 @@ import org.bukkit.inventory.*;
 
 public class Smithing {
     public static Recipe main() {
-        NamespacedKey ns = new NamespacedKey(new TrimsSmp(), "sword_smith");
+        NamespacedKey ns = new NamespacedKey(TrimsSmp.getPlugin(TrimsSmp.class), "sword_smith");
 
         SmithingRecipe recipe = new SmithingTransformRecipe(
                 ns,

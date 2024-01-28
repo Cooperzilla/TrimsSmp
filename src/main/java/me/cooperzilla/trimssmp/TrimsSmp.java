@@ -4,6 +4,8 @@ import me.cooperzilla.trimssmp.misc.DebugCmd;
 import me.cooperzilla.trimssmp.trims.*;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.Objects;
+
 public class TrimsSmp extends JavaPlugin {
     @Override
     public void onEnable() {
@@ -26,6 +28,6 @@ public class TrimsSmp extends JavaPlugin {
         //Bukkit.addRecipe(Smithing.main());
         //getLogger().info("Recipes Registered!!!");
 
-        getServer().getPluginCommand("debug").setExecutor(new DebugCmd());
+        Objects.requireNonNull(getServer().getPluginCommand("debug")).setExecutor(new DebugCmd());
     }
 }

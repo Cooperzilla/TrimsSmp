@@ -5,7 +5,7 @@ import me.cooperzilla.trimssmp.utils.NumUtils;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
-import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.inventory.ItemStack;
 
 public class Ward extends ItemClass {
 
@@ -14,8 +14,7 @@ public class Ward extends ItemClass {
     }
 
     @Override
-    protected void run(PlayerInteractEvent event) {
-        Player player = event.getPlayer();
+    protected void run(Player player, ItemStack item) {
 
         for (Entity entity : player.getNearbyEntities(5, 5, 5)) {
             if (entity instanceof LivingEntity && entity != player) {

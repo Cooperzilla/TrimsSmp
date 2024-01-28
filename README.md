@@ -2,8 +2,13 @@ Adds trimmed swords recreation of a plugin from a yt video im not bothered enoug
 
 
 # Dev notes / todo
-- fix smithing recipe
-- fix ward sonic beam (half works)
-- fix dashes (half works?)
-- implement the other trims
-- more wither skeles from snout and longer cooldown
+
+## Priorities
+- Fix Cooldowns casueing
+`error could not pass event player interact event`
+- Fix Smithing Recipe (stops plugin from loading)
+
+## Next
+- Add Last Trims
+- Upgrade Ward ability
+- Better water cheaks for coast

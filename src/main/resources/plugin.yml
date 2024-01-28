@@ -3,11 +3,12 @@ version: '${project.version}'
 main: me.cooperzilla.trimssmp.TrimsSmp
 api-version: '1.20'
 folia-supported: true
+load: STARTUP
 
 commands:
   debug:
     usage: '/debug <integer>'
-    description: 'every ~10 numbers the sword changes powers'
+    description: 'every 10 numbers the sword changes powers'
     permission: trimssmp.god
     permission-message: 'LLLL'
 

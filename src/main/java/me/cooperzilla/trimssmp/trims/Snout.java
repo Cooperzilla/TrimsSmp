@@ -1,13 +1,9 @@
 package me.cooperzilla.trimssmp.trims;
 
-import me.cooperzilla.trimssmp.utils.*;
-import org.bukkit.Color;
+import me.cooperzilla.trimssmp.utils.ItemClass;
+import me.cooperzilla.trimssmp.utils.NumUtils;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.WitherSkull;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.Listener;
-import org.bukkit.event.inventory.CraftItemEvent;
-import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.util.Vector;
 
@@ -18,8 +14,8 @@ public class Snout extends ItemClass {
     }
 
     @Override
-    protected void run(PlayerInteractEvent event) {
-        Player player = event.getPlayer();
+    protected void run(Player player, ItemStack item) {
+
         player.launchProjectile(WitherSkull.class, new Vector(
                 player.getLocation().getDirection().getX(),
                 player.getLocation().getDirection().getY(),

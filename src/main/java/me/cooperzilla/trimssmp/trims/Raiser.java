@@ -3,7 +3,7 @@ package me.cooperzilla.trimssmp.trims;
 import me.cooperzilla.trimssmp.utils.ItemClass;
 import me.cooperzilla.trimssmp.utils.NumUtils;
 import org.bukkit.entity.Player;
-import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.inventory.ItemStack;
 
 public class Raiser extends ItemClass {
 
@@ -13,8 +13,7 @@ public class Raiser extends ItemClass {
 
 
     @Override
-    protected void run(PlayerInteractEvent event) {
-        Player player = event.getPlayer();
+    protected void run(Player player, ItemStack item) {
         player.setVelocity(player.getLocation().getDirection().multiply(1.5));
     }
 }

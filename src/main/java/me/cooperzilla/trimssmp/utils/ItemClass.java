@@ -44,8 +44,8 @@ public abstract class ItemClass implements Listener {
 
         if (CheaksUtils.hasTrim(item, num)) {
             if (event.getAction().name().contains("RIGHT_CLICK")) {
-                if (!(player.hasMetadata(str))) {
-                    run(event);
+                if (!player.hasMetadata(str)) {
+                    run(player, item);
                     CooldownUtils.setCooldown(player, str, COOLDOWN_DURATION);
                 } else {
                     player.sendMessage("Ability on cooldown!");
@@ -54,5 +54,5 @@ public abstract class ItemClass implements Listener {
         }
     }
 
-    protected abstract void run(PlayerInteractEvent event);
+    protected abstract void run(Player player, ItemStack item);
 }

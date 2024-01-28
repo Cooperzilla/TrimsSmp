@@ -4,7 +4,7 @@ import me.cooperzilla.trimssmp.misc.CustomArrow;
 import me.cooperzilla.trimssmp.utils.ItemClass;
 import me.cooperzilla.trimssmp.utils.NumUtils;
 import org.bukkit.entity.Player;
-import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.inventory.ItemStack;
 
 public class Sentry extends ItemClass {
 
@@ -13,8 +13,7 @@ public class Sentry extends ItemClass {
     }
 
     @Override
-    protected void run(PlayerInteractEvent event) {
-        Player player = event.getPlayer();
+    protected void run(Player player, ItemStack item) {
         player.launchProjectile(CustomArrow.class, player.getLocation().getDirection());
     }
 }

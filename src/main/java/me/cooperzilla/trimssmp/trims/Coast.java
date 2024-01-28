@@ -3,7 +3,6 @@ package me.cooperzilla.trimssmp.trims;
 import me.cooperzilla.trimssmp.utils.ItemClass;
 import me.cooperzilla.trimssmp.utils.NumUtils;
 import org.bukkit.entity.Player;
-import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 
 public class Coast extends ItemClass {
@@ -13,9 +12,7 @@ public class Coast extends ItemClass {
     }
 
     @Override
-    protected void run(PlayerInteractEvent event) {
-        Player player = event.getPlayer();
-        ItemStack item = event.getItem();
+    protected void run(Player player, ItemStack item) {
         if (player.isSwimming() || player.getWorld().hasStorm() || player.getWorld().isThundering()) {
             player.setVelocity(player.getLocation().getDirection().multiply(2));
         }

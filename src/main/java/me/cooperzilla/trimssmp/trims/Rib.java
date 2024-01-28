@@ -7,7 +7,7 @@ import org.bukkit.World;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.WitherSkeleton;
-import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.inventory.ItemStack;
 
 import java.util.Random;
 
@@ -18,8 +18,7 @@ public class Rib extends ItemClass {
     }
 
     @Override
-    protected void run(PlayerInteractEvent event) {
-        Player player = event.getPlayer();
+    protected void run(Player player, ItemStack item) {
         World world = player.getWorld();
 
         for (int i = 0; i < 6; i++) {

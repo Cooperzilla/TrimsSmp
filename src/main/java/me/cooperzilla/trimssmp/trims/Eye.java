@@ -1,9 +1,10 @@
 package me.cooperzilla.trimssmp.trims;
 
-import me.cooperzilla.trimssmp.utils.*;
+import me.cooperzilla.trimssmp.utils.ItemClass;
+import me.cooperzilla.trimssmp.utils.NumUtils;
 import org.bukkit.entity.EnderPearl;
 import org.bukkit.entity.Player;
-import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.inventory.ItemStack;
 
 public class Eye extends ItemClass {
 
@@ -12,8 +13,7 @@ public class Eye extends ItemClass {
     }
 
     @Override
-    protected void run(PlayerInteractEvent event) {
-        Player player = event.getPlayer();;
+    protected void run(Player player, ItemStack item) {
         player.launchProjectile(EnderPearl.class, player.getLocation().getDirection());
     }
 }

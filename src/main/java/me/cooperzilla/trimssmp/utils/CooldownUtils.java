@@ -10,7 +10,7 @@ public class CooldownUtils {
         player.setMetadata(str, new FixedMetadataValue(new TrimsSmp(), true));
 
         if (!player.hasMetadata("cooldown_multiplier")) {
-            player.setMetadata("cooldown_multiplier", new FixedMetadataValue(new TrimsSmp(), 1L));
+            player.setMetadata("cooldown_multiplier", new FixedMetadataValue(new TrimsSmp(), 1));
         }
 
         new BukkitRunnable() {
@@ -18,6 +18,11 @@ public class CooldownUtils {
             public void run() {
                 player.removeMetadata(str, new TrimsSmp());
             }
-        }.runTaskLater(new TrimsSmp(), cooldown * player.getMetadata("cooldown_multiplier").get(0).asLong());
+        }.runTaskLater(
+                TrimsSmp.getPlugin(TrimsSmp.class),
+                cooldown * player.getMetadata("cooldown_multiplier").get(0).asLong()
+        );
+
+
     }
 }

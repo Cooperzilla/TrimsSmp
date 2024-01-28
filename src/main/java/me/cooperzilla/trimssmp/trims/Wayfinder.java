@@ -5,7 +5,7 @@ import me.cooperzilla.trimssmp.utils.NumUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
-import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.inventory.ItemStack;
 
 public class Wayfinder extends ItemClass {
 
@@ -14,8 +14,7 @@ public class Wayfinder extends ItemClass {
     }
 
     @Override
-    protected void run(PlayerInteractEvent event) {
-        Player player = event.getPlayer();
+    protected void run(Player player, ItemStack item) {
         Player nearestPlayer = null;
         double nearestDistance = 25;
         for (Player other : Bukkit.getOnlinePlayers()) {
