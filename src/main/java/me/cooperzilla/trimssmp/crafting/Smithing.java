@@ -6,17 +6,39 @@ import org.bukkit.Tag;
 import org.bukkit.inventory.*;
 
 public class Smithing {
-
-    public static Recipe run() {
-        NamespacedKey ns = new NamespacedKey("trimssmp", "sword_smith");
-
-        SmithingRecipe recipe = new SmithingTransformRecipe(
-               ns,
+    public static Recipe dia() {
+        return new SmithingTransformRecipe(
+               new NamespacedKey("trimssmp", "sword_smith"),
                new ItemStack(Material.DIAMOND_SWORD),
                new RecipeChoice.MaterialChoice(Tag.ITEMS_TRIM_TEMPLATES),
                new RecipeChoice.MaterialChoice(Tag.ITEMS_SWORDS),
                new RecipeChoice.MaterialChoice(Tag.ITEMS_TRIM_MATERIALS));
+    }
 
-        return null;
+    public static Recipe neth() {
+        return new SmithingTransformRecipe(
+                new NamespacedKey("trimssmp", "sword_smith"),
+                new ItemStack(Material.NETHERITE_SWORD),
+                new RecipeChoice.MaterialChoice(Tag.ITEMS_TRIM_TEMPLATES),
+                new RecipeChoice.MaterialChoice(Tag.ITEMS_SWORDS),
+                new RecipeChoice.MaterialChoice(Tag.ITEMS_TRIM_MATERIALS));
+    }
+
+    public static Recipe gold() {
+        return new SmithingTransformRecipe(
+                new NamespacedKey("trimssmp", "sword_smith"),
+                new ItemStack(Material.GOLDEN_SWORD),
+                new RecipeChoice.MaterialChoice(Tag.ITEMS_TRIM_TEMPLATES),
+                new RecipeChoice.MaterialChoice(Tag.ITEMS_SWORDS),
+                new RecipeChoice.MaterialChoice(Tag.ITEMS_TRIM_MATERIALS));
+    }
+
+    public static Recipe iron() {
+        return new SmithingTransformRecipe(
+                new NamespacedKey("trimssmp", "sword_smith"),
+                new ItemStack(Material.IRON_SWORD),
+                new RecipeChoice.MaterialChoice(Tag.ITEMS_TRIM_TEMPLATES),
+                new RecipeChoice.MaterialChoice(Tag.ITEMS_SWORDS),
+                new RecipeChoice.MaterialChoice(Tag.ITEMS_TRIM_MATERIALS));
     }
 }

@@ -27,11 +27,16 @@ public class TrimsSmp extends JavaPlugin {
 
         getLogger().info("Listeners Registered!!!");
 
+        Bukkit.addRecipe(Smithing.dia());
+        Bukkit.addRecipe(Smithing.neth());
+        Bukkit.addRecipe(Smithing.gold());
+        Bukkit.addRecipe(Smithing.iron());
 
-        Bukkit.addRecipe(Smithing.run());
         getLogger().info("Recipes Registered!!!");
 
 
         Objects.requireNonNull(getServer().getPluginCommand("debug")).setExecutor(new DebugCmd());
+
+        getLogger().info("Commands Registered!!!");
     }
 }

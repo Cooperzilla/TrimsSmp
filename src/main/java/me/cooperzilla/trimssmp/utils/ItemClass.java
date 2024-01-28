@@ -26,10 +26,19 @@ public abstract class ItemClass implements Listener {
     @EventHandler
     public void onCraftItem(CraftItemEvent event) {
         ItemStack result = event.getRecipe().getResult();
+        ItemStack[] matrix = event.getInventory().getMatrix();
         if (CheaksUtils.hasCorrectIngredients(event, num)) {
             Color color = ColorUtils.getColorFromAdjacentOre(event);
             if (color != null) {
-                ColorUtils.applyColor(result, color, num);
+                for (ItemStack trim : matrix) {
+                    if (CheaksUtils.isCorrectTrim(trim, str)) {
+                        ColorUtils.applyColor(result, color, num);
+                    } else {
+                        event.setCancelled(true);
+                    }
+                }
+            } else {
+                event.setCancelled(true);
             }
         } else {
             event.setCancelled(true);
