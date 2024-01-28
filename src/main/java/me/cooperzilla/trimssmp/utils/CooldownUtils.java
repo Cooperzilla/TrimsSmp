@@ -9,6 +9,10 @@ public class CooldownUtils {
     public static void setCooldown(Player player, String str, Long cooldown) {
         player.setMetadata(str, new FixedMetadataValue(new TrimsSmp(), true));
 
+        if (!player.hasMetadata("cooldown_multiplier")) {
+            player.setMetadata("cooldown_multiplier", new FixedMetadataValue(new TrimsSmp(), 1L));
+        }
+
         new BukkitRunnable() {
             @Override
             public void run() {
