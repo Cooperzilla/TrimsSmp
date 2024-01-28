@@ -1,6 +1,5 @@
 package me.cooperzilla.trimssmp.utils;
 
-import org.bukkit.Bukkit;
 import org.bukkit.Color;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
@@ -10,6 +9,9 @@ import org.bukkit.event.inventory.SmithItemEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.scheduler.BukkitRunnable;
+
+import java.util.Objects;
 
 public abstract class ItemClass implements Listener {
 
@@ -31,6 +33,7 @@ public abstract class ItemClass implements Listener {
         Event.Result result = event.getResult();
 
         Color color = ColorUtils.getColorFromAdjacentOre(matrix[2]);
+        ItemStack[] inv = event.getWhoClicked().getInventory().getStorageContents();
 
         event.setCancelled(
                 !CheaksUtils.hasCorrectIngredients(event, num) ||
@@ -38,16 +41,26 @@ public abstract class ItemClass implements Listener {
                 CheaksUtils.isCorrectTrim(matrix[1], str)
         );
 
-        wait(100, 0);
+        if (!event.isCancelled() || color != null) {
 
-        if (!event.isCancelled()) {
+            new BukkitRunnable() {
+                @Override
+                public void run() {
+                    for (ItemStack i : inv) {
+                        if (i != null) {
+                            pl.getLogger().info(i.toString());
+                            if (CheaksUtils.isSword(i.getType())) {
+                                pl.getLogger().info("DEBUG isSword");
+                                if (!Objects.requireNonNull(i.getItemMeta()).hasCustomModelData()) {
+                                    pl.getLogger().info("DEBUG hasCustomTexture");
+                                    ColorUtils.applyColor(i, color, num);
+                                }
+                            }
+                        }
+                    }
+                }
+            }.runTaskLater(pl, 5L);
 
-            Bukkit.getServer().getScheduler().runTaskLater(pl, new RunnableClass(
-                    color,
-                    event.getWhoClicked().getInventory().getStorageContents(),
-                    num,
-                    pl
-            ), 5L);
 
         }
 

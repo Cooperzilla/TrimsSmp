@@ -14,7 +14,7 @@ public class Coast extends ItemClass {
 
     @Override
     protected void run(Player player, ItemStack item) {
-        if (player.isSwimming() || player.getWorld().hasStorm() || player.getWorld().isThundering()) {
+        if (player.isSwimming() || player.getWorld().hasStorm() || player.getWorld().isThundering() || player.isInWater()) {
             player.setVelocity(player.getLocation().getDirection().multiply(2));
         }
 
