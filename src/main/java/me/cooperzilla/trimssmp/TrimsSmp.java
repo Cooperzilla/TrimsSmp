@@ -26,7 +26,6 @@ public class TrimsSmp extends JavaPlugin {
         getLogger().info("Listeners Registered!!!");
 
         //Bukkit.addRecipe(Smithing.main());
-
         //getLogger().info("Recipes Registered!!!");
 
         getServer().getPluginCommand("debug").setExecutor(new DebugCmd());

@@ -6,6 +6,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 
 public class DebugCmd implements CommandExecutor {
 
@@ -19,7 +20,10 @@ public class DebugCmd implements CommandExecutor {
         }
 
         ItemStack item = new ItemStack(Material.DIAMOND_SWORD);
-        item.getItemMeta().setCustomModelData(Integer.valueOf(args[0]));
+        ItemMeta meta = item.getItemMeta();
+
+        meta.setCustomModelData(Integer.valueOf(args[0]));
+        item.setItemMeta(meta);
 
         player.getInventory().addItem(item);
 
