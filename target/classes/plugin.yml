@@ -2,3 +2,16 @@ name: TrimsSmp
 version: '1.0-SNAPSHOT'
 main: me.cooperzilla.trimssmp.TrimsSmp
 api-version: '1.20'
+folia-supported: true
+
+commands:
+  debug:
+    usage: '/debug <integer>'
+    description: 'every ~10 numbers the sword changes powers'
+    permission: trimssmp.god
+    permission-message: 'LLLL'
+
+permissions:
+  trimssmp.god:
+    description: 't'
+    default: op

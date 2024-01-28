@@ -1,6 +1,6 @@
 package me.cooperzilla.trimssmp.trims;
 
-import me.cooperzilla.trimssmp.misc.customArrow;
+import me.cooperzilla.trimssmp.misc.CustomArrow;
 import me.cooperzilla.trimssmp.utils.CheaksUtils;
 import me.cooperzilla.trimssmp.utils.ColorUtils;
 import me.cooperzilla.trimssmp.utils.CooldownUtils;
@@ -44,7 +44,7 @@ public class Sentry implements Listener {
             if (event.getAction().name().contains("RIGHT_CLICK")) {
                 if (!(player.hasMetadata("sentry_cooldown"))) {
 
-                    player.launchProjectile(customArrow.class, player.getLocation().getDirection());
+                    player.launchProjectile(CustomArrow.class, player.getLocation().getDirection());
                     CooldownUtils.setCooldown(player, "sentry_cooldown", COOLDOWN_DURATION);
 
                 } else {

@@ -1,13 +1,10 @@
 package me.cooperzilla.trimssmp.trims;
 
-import me.cooperzilla.trimssmp.misc.customArrow;
 import me.cooperzilla.trimssmp.utils.CheaksUtils;
 import me.cooperzilla.trimssmp.utils.ColorUtils;
 import me.cooperzilla.trimssmp.utils.CooldownUtils;
 import me.cooperzilla.trimssmp.utils.NumUtils;
 import org.bukkit.Color;
-import org.bukkit.attribute.Attribute;
-import org.bukkit.attribute.AttributeModifier;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.WitherSkull;
 import org.bukkit.event.EventHandler;
@@ -16,8 +13,6 @@ import org.bukkit.event.inventory.CraftItemEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.util.Vector;
-
-import java.util.UUID;
 
 public class Snout implements Listener {
 
