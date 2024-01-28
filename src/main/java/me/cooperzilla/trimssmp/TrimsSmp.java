@@ -3,6 +3,7 @@ package me.cooperzilla.trimssmp;
 import me.cooperzilla.trimssmp.crafting.Smithing;
 import me.cooperzilla.trimssmp.misc.DebugCmd;
 import me.cooperzilla.trimssmp.trims.*;
+import me.cooperzilla.trimssmp.utils.NumUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
