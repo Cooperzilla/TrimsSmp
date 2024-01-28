@@ -30,20 +30,33 @@ public class CheaksUtils {
 
     public static boolean hasCorrectIngredients(CraftItemEvent event, Integer num) {
         ItemStack[] matrix = event.getInventory().getMatrix();
-        boolean hasTrim = false;
+        boolean hasSword = false;
         boolean hasOre = false;
 
         for (ItemStack item : matrix) {
             if (item != null) {
-                if (CheaksUtils.hasTrim(item, num)) {
-                    hasTrim = true;
+                if (CheaksUtils.isSword(item.getType())) {
+                    hasSword = true;
                 } else if (CheaksUtils.isOre(item.getType())) {
                     hasOre = true;
                 }
             }
         }
 
-        return hasTrim && hasOre;
+        return hasSword && hasOre;
+    }
+
+    public static boolean isSword(Material material) {
+        return (
+                material == Material.DIAMOND_SWORD || // Adjust ore materials as needed
+                material == Material.GOLDEN_SWORD ||
+                material == Material.NETHERITE_SWORD ||
+                material == Material.IRON_SWORD
+        );
+    }
+
+    public static boolean isCorrectTrim(ItemStack trim, String str) {
+        return trim.getType().toString().toLowerCase() == str.split("_")[0];
     }
 
 }
