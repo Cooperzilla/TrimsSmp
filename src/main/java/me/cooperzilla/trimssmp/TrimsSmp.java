@@ -1,7 +1,9 @@
 package me.cooperzilla.trimssmp;
 
+import me.cooperzilla.trimssmp.crafting.Smithing;
 import me.cooperzilla.trimssmp.misc.DebugCmd;
 import me.cooperzilla.trimssmp.trims.*;
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.Objects;
@@ -25,10 +27,10 @@ public class TrimsSmp extends JavaPlugin {
 
         getLogger().info("Listeners Registered!!!");
 
-        /*
-        Bukkit.addRecipe(Smithing.main());
+
+        Bukkit.addRecipe(Smithing.run());
         getLogger().info("Recipes Registered!!!");
-         */
+
 
         Objects.requireNonNull(getServer().getPluginCommand("debug")).setExecutor(new DebugCmd());
     }

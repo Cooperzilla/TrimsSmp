@@ -1,9 +1,14 @@
 package me.cooperzilla.trimssmp.crafting;
 
-/*
+import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
+import org.bukkit.Tag;
+import org.bukkit.inventory.*;
+
 public class Smithing {
-    public static Recipe main() {
-        NamespacedKey ns = new NamespacedKey(), "sword_smith");
+
+    public static Recipe run() {
+        NamespacedKey ns = new NamespacedKey("trimssmp", "sword_smith");
 
         SmithingRecipe recipe = new SmithingTransformRecipe(
                ns,
@@ -15,4 +20,3 @@ public class Smithing {
         return null;
     }
 }
-*/
