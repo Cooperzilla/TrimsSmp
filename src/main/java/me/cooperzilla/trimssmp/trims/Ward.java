@@ -6,11 +6,12 @@ import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.plugin.java.JavaPlugin;
 
 public class Ward extends ItemClass {
 
-    public Ward() {
-        super(NumUtils.getNum(3), NumUtils.minutes(1), "ward_cooldown");
+    public Ward(JavaPlugin pl) {
+        super(NumUtils.getNum(3), NumUtils.minutes(1), "ward_cooldown", pl);
     }
 
     @Override

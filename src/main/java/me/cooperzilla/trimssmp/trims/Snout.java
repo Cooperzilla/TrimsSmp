@@ -5,12 +5,13 @@ import me.cooperzilla.trimssmp.utils.NumUtils;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.WitherSkull;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.util.Vector;
 
 public class Snout extends ItemClass {
 
-    public Snout() {
-        super(NumUtils.getNum(11), NumUtils.minutes(1), "snout_cooldown");
+    public Snout(JavaPlugin pl) {
+        super(NumUtils.getNum(11), NumUtils.minutes(1), "snout_cooldown", pl);
     }
 
     @Override

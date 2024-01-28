@@ -5,11 +5,12 @@ import me.cooperzilla.trimssmp.utils.ItemClass;
 import me.cooperzilla.trimssmp.utils.NumUtils;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.plugin.java.JavaPlugin;
 
 public class Sentry extends ItemClass {
 
-    public Sentry() {
-        super(NumUtils.getNum(9), NumUtils.seconds(45), "sentry_cooldown");
+    public Sentry(JavaPlugin pl) {
+        super(NumUtils.getNum(9), NumUtils.seconds(45), "sentry_cooldown", pl);
     }
 
     @Override

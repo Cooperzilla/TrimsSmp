@@ -6,11 +6,12 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.plugin.java.JavaPlugin;
 
 public class Wayfinder extends ItemClass {
 
-    public Wayfinder() {
-        super(NumUtils.getNum(2), NumUtils.minutes(1), "wayfinder_cooldown");
+    public Wayfinder(JavaPlugin pl) {
+        super(NumUtils.getNum(2), NumUtils.minutes(1), "wayfinder_cooldown", pl);
     }
 
     @Override

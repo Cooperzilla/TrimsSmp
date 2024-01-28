@@ -6,14 +6,15 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.Objects;
 import java.util.Random;
 
 public class Wild extends ItemClass {
 
-    public Wild() {
-        super(NumUtils.getNum(6), NumUtils.minutes(5), "wild_cooldown");
+    public Wild(JavaPlugin pl) {
+        super(NumUtils.getNum(6), NumUtils.minutes(5), "wild_cooldown", pl);
     }
 
     @Override

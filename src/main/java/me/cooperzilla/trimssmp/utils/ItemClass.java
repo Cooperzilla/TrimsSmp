@@ -7,17 +7,20 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.CraftItemEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.plugin.java.JavaPlugin;
 
 public abstract class ItemClass implements Listener {
 
     private final Integer num;
     private final Long COOLDOWN_DURATION;
     private final String str;
+    private final JavaPlugin pl;
 
-    public ItemClass(Integer num, Long cooldownDuration, String str) {
+    public ItemClass(Integer num, Long cooldownDuration, String str, JavaPlugin pl) {
         this.num = num;
         this.COOLDOWN_DURATION = cooldownDuration;
         this.str = str;
+        this.pl = pl;
     }
 
     @EventHandler
@@ -46,7 +49,7 @@ public abstract class ItemClass implements Listener {
             if (event.getAction().name().contains("RIGHT_CLICK")) {
                 if (!player.hasMetadata(str)) {
                     run(player, item);
-                    CooldownUtils.setCooldown(player, str, COOLDOWN_DURATION);
+                    CooldownUtils.setCooldown(player, str, COOLDOWN_DURATION, pl);
                 } else {
                     player.sendMessage("Ability on cooldown!");
                 }
