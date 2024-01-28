@@ -1,7 +1,7 @@
 package me.cooperzilla.trimssmp.utils;
 
 import org.bukkit.Material;
-import org.bukkit.event.inventory.CraftItemEvent;
+import org.bukkit.event.inventory.SmithItemEvent;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.Arrays;
@@ -28,8 +28,8 @@ public class CheaksUtils {
                 Arrays.asList(num, num+1, num+2, num+3, num+4, num+5, num+6, num+7, num+8, num+9).contains(item.getItemMeta().getCustomModelData());
     }
 
-    public static boolean hasCorrectIngredients(CraftItemEvent event, Integer num) {
-        ItemStack[] matrix = event.getInventory().getMatrix();
+    public static boolean hasCorrectIngredients(SmithItemEvent event, Integer num) {
+        ItemStack[] matrix = event.getInventory().getStorageContents();
         boolean hasSword = false;
         boolean hasOre = false;
 
@@ -56,7 +56,7 @@ public class CheaksUtils {
     }
 
     public static boolean isCorrectTrim(ItemStack trim, String str) {
-        return trim.getType().toString().toLowerCase() == str.split("_")[0];
+        return trim.getType().toString().toLowerCase().equals(str.split("_")[0]);
     }
 
 }

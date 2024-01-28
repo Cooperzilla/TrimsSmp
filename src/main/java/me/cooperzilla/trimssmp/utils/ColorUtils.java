@@ -1,30 +1,23 @@
 package me.cooperzilla.trimssmp.utils;
 
 import org.bukkit.Color;
-import org.bukkit.event.inventory.InventoryClickEvent;
-import org.bukkit.inventory.CraftingInventory;
 import org.bukkit.inventory.ItemStack;
 
 public class ColorUtils {
-    public static Color getColorFromAdjacentOre(InventoryClickEvent event) {
-        ItemStack[] matrix = ((CraftingInventory) event.getInventory()).getMatrix();
-        for (ItemStack item : matrix) {
-            if (item != null && CheaksUtils.isOre(item.getType())) {
-                switch (item.getType()) {
-                    case AMETHYST_SHARD: return Color.PURPLE;
-                    case EMERALD: return Color.GREEN;
-                    case COPPER_INGOT: return Color.ORANGE;
-                    case DIAMOND: return Color.TEAL;
-                    case GOLD_INGOT: return Color.YELLOW;
-                    case LAPIS_LAZULI: return Color.BLUE;
-                    case NETHERITE_INGOT: return Color.BLACK;
-                    case REDSTONE: return Color.RED;
-                    case IRON_INGOT: return Color.WHITE;
-                    case QUARTZ: return Color.GRAY;
-
-                }
-            }
+    public static Color getColorFromAdjacentOre(ItemStack item) {
+        switch (item.getType()) {
+            case AMETHYST_SHARD: return Color.PURPLE;
+            case EMERALD: return Color.GREEN;
+            case COPPER_INGOT: return Color.ORANGE;
+            case DIAMOND: return Color.TEAL;
+            case GOLD_INGOT: return Color.YELLOW;
+            case LAPIS_LAZULI: return Color.BLUE;
+            case NETHERITE_INGOT: return Color.BLACK;
+            case REDSTONE: return Color.RED;
+            case IRON_INGOT: return Color.WHITE;
+            case QUARTZ: return Color.GRAY;
         }
+
         return null;
     }
 

@@ -8,7 +8,7 @@ import org.bukkit.inventory.*;
 public class Smithing {
     public static Recipe dia() {
         return new SmithingTransformRecipe(
-               new NamespacedKey("trimssmp", "sword_smith"),
+               new NamespacedKey("trimssmp", "dia_sword_smith"),
                new ItemStack(Material.DIAMOND_SWORD),
                new RecipeChoice.MaterialChoice(Tag.ITEMS_TRIM_TEMPLATES),
                new RecipeChoice.MaterialChoice(Tag.ITEMS_SWORDS),
@@ -17,7 +17,7 @@ public class Smithing {
 
     public static Recipe neth() {
         return new SmithingTransformRecipe(
-                new NamespacedKey("trimssmp", "sword_smith"),
+                new NamespacedKey("trimssmp", "neth_sword_smith"),
                 new ItemStack(Material.NETHERITE_SWORD),
                 new RecipeChoice.MaterialChoice(Tag.ITEMS_TRIM_TEMPLATES),
                 new RecipeChoice.MaterialChoice(Tag.ITEMS_SWORDS),
@@ -26,7 +26,7 @@ public class Smithing {
 
     public static Recipe gold() {
         return new SmithingTransformRecipe(
-                new NamespacedKey("trimssmp", "sword_smith"),
+                new NamespacedKey("trimssmp", "gold_sword_smith"),
                 new ItemStack(Material.GOLDEN_SWORD),
                 new RecipeChoice.MaterialChoice(Tag.ITEMS_TRIM_TEMPLATES),
                 new RecipeChoice.MaterialChoice(Tag.ITEMS_SWORDS),
@@ -35,7 +35,7 @@ public class Smithing {
 
     public static Recipe iron() {
         return new SmithingTransformRecipe(
-                new NamespacedKey("trimssmp", "sword_smith"),
+                new NamespacedKey("trimssmp", "iron_sword_smith"),
                 new ItemStack(Material.IRON_SWORD),
                 new RecipeChoice.MaterialChoice(Tag.ITEMS_TRIM_TEMPLATES),
                 new RecipeChoice.MaterialChoice(Tag.ITEMS_SWORDS),
