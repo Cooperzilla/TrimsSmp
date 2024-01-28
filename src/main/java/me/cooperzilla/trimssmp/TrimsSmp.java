@@ -1,6 +1,7 @@
 package me.cooperzilla.trimssmp;
 
 import me.cooperzilla.trimssmp.crafting.Smithing;
+import me.cooperzilla.trimssmp.lives.DeathListener;
 import me.cooperzilla.trimssmp.misc.DebugCmd;
 import me.cooperzilla.trimssmp.trims.*;
 import org.bukkit.Bukkit;
@@ -25,7 +26,10 @@ public class TrimsSmp extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new Dune(this), this);
         getServer().getPluginManager().registerEvents(new Snout(this), this);
 
+        getServer().getPluginManager().registerEvents(new DeathListener(this), this);
+
         getLogger().info("Listeners Registered!!!");
+
 
         Bukkit.addRecipe(Smithing.dia());
         Bukkit.addRecipe(Smithing.neth());
@@ -38,5 +42,6 @@ public class TrimsSmp extends JavaPlugin {
         Objects.requireNonNull(getServer().getPluginCommand("debug")).setExecutor(new DebugCmd());
 
         getLogger().info("Commands Registered!!!");
+
     }
 }
