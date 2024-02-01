@@ -8,6 +8,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityPickupItemEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.inventory.SmithItemEvent;
+import org.bukkit.event.player.PlayerDropItemEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.metadata.FixedMetadataValue;
@@ -52,6 +53,10 @@ public class LimitCheaks implements Listener {
 
     @EventHandler
     public void onDeath(PlayerDeathEvent event) {
+        if (event.getKeepInventory()) {
+            return;
+        }
+
         Player player = event.getEntity();
 
         if (!player.hasMetadata("trimedSwordsLimit")) {
@@ -79,6 +84,11 @@ public class LimitCheaks implements Listener {
 
         if (meta.hasCustomModelData()) {
 
+            if (!player.hasMetadata("trimedSwordsLimit")) {
+                player.setMetadata("trimedSwordsLimit", new FixedMetadataValue(pl, 1));
+                player.setMetadata("trimedSwords", new FixedMetadataValue(pl, 0));
+            }
+
             if (
                     player.getMetadata("trimedSwords").get(0) ==
                             player.getMetadata("trimedSwordsLimit").get(0)
@@ -86,15 +96,31 @@ public class LimitCheaks implements Listener {
                 event.setCancelled(true);
             }
 
-            if (!player.hasMetadata("trimedSwordsLimit")) {
-                player.setMetadata("trimedSwordsLimit", new FixedMetadataValue(pl, 1));
-                player.setMetadata("trimedSwords", new FixedMetadataValue(pl, 0));
-            }
-
             player.setMetadata("trimedSwords", new FixedMetadataValue(
                     pl, player.getMetadata("trimedSwords").get(0).asInt() + 1)
             );
         }
 
+    }
+
+    @EventHandler
+    public void onDrop(PlayerDropItemEvent event) {
+        Player player = event.getPlayer();
+
+        ItemStack item = event.getItemDrop().getItemStack();
+        ItemMeta meta = item.getItemMeta();
+
+        if (meta.hasCustomModelData()) {
+
+            if (!player.hasMetadata("trimedSwordsLimit")) {
+                player.setMetadata("trimedSwordsLimit", new FixedMetadataValue(pl, 1));
+                player.setMetadata("trimedSwords", new FixedMetadataValue(pl, 0));
+            }
+
+            if (player.getMetadata("trimedSwords").get(0).asInt() > 0) {
+                player.setMetadata("trimedSwords", new FixedMetadataValue(
+                        pl, player.getMetadata("trimedSwords").get(0).asInt() - 1));
+            }
+        }
     }
 }
