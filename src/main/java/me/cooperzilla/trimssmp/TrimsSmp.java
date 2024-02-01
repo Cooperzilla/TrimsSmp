@@ -1,8 +1,9 @@
 package me.cooperzilla.trimssmp;
 
 import me.cooperzilla.trimssmp.crafting.Smithing;
-import me.cooperzilla.trimssmp.lives.DeathListener;
+import me.cooperzilla.trimssmp.misc.DeathListener;
 import me.cooperzilla.trimssmp.misc.DebugCmd;
+import me.cooperzilla.trimssmp.misc.LimitCheaks;
 import me.cooperzilla.trimssmp.trims.*;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -27,6 +28,7 @@ public class TrimsSmp extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new Snout(this), this);
 
         getServer().getPluginManager().registerEvents(new DeathListener(this), this);
+        getServer().getPluginManager().registerEvents(new LimitCheaks(this), this);
 
         getLogger().info("Listeners Registered!!!");
 

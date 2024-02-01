@@ -1,4 +1,4 @@
-package me.cooperzilla.trimssmp.lives;
+package me.cooperzilla.trimssmp.misc;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
