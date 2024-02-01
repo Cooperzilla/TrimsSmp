@@ -1,10 +1,10 @@
 me\cooperzilla\trimssmp\trims\Wayfinder.class
+me\cooperzilla\trimssmp\misc\DeathListener.class
 me\cooperzilla\trimssmp\crafting\Smithing.class
 me\cooperzilla\trimssmp\utils\ItemClass$1.class
 me\cooperzilla\trimssmp\trims\Eye.class
 me\cooperzilla\trimssmp\trims\Wild.class
 me\cooperzilla\trimssmp\misc\CustomArrow.class
-me\cooperzilla\trimssmp\lives\DeathListener.class
 me\cooperzilla\trimssmp\utils\ColorUtils$1.class
 me\cooperzilla\trimssmp\TrimsSmp.class
 me\cooperzilla\trimssmp\trims\Spire.class
@@ -17,6 +17,7 @@ me\cooperzilla\trimssmp\trims\Ward.class
 me\cooperzilla\trimssmp\utils\CooldownUtils.class
 me\cooperzilla\trimssmp\misc\DebugCmd.class
 me\cooperzilla\trimssmp\trims\Sentry.class
+me\cooperzilla\trimssmp\misc\LimitCheaks.class
 me\cooperzilla\trimssmp\trims\Dune.class
 me\cooperzilla\trimssmp\utils\ItemClass.class
 me\cooperzilla\trimssmp\trims\Coast.class
