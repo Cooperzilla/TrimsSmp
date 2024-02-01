@@ -2,6 +2,8 @@ package me.cooperzilla.trimssmp.utils;
 
 import org.bukkit.Color;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.plugin.java.JavaPlugin;
 
 public class ColorUtils {
     public static Color getColorFromAdjacentOre(ItemStack item) {
@@ -21,7 +23,7 @@ public class ColorUtils {
         return null;
     }
 
-    public static void applyColor(ItemStack item, Color color, Integer num) {
+    public static void applyColor(ItemStack item, Color color, Integer num, JavaPlugin pl) {
         Integer offset = 0;
 
         if (color.equals(Color.PURPLE)) {
@@ -46,6 +48,9 @@ public class ColorUtils {
             offset = 9;
         }
 
-        item.getItemMeta().setCustomModelData(num + offset);
+
+        ItemMeta meta = item.getItemMeta();
+        meta.setCustomModelData(num + offset);
+        item.setItemMeta(meta);
     }
 }

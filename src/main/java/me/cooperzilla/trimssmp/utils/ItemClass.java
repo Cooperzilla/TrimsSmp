@@ -2,7 +2,6 @@ package me.cooperzilla.trimssmp.utils;
 
 import org.bukkit.Color;
 import org.bukkit.entity.Player;
-import org.bukkit.event.Event;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.SmithItemEvent;
@@ -10,8 +9,6 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
-
-import java.util.Objects;
 
 public abstract class ItemClass implements Listener {
 
@@ -28,43 +25,45 @@ public abstract class ItemClass implements Listener {
     }
 
     @EventHandler
-    public void onCraftItem(SmithItemEvent event) throws InterruptedException {
+    public void onCraftItem(SmithItemEvent event) {
         ItemStack[] matrix = event.getInventory().getStorageContents();
-        Event.Result result = event.getResult();
+        Player player = (Player) event.getWhoClicked();
 
         Color color = ColorUtils.getColorFromAdjacentOre(matrix[2]);
-        ItemStack[] inv = event.getWhoClicked().getInventory().getStorageContents();
+        //event.get
 
         event.setCancelled(
                 !CheaksUtils.hasCorrectIngredients(event, num) ||
-                color == null ||
-                CheaksUtils.isCorrectTrim(matrix[1], str)
+                        color == null ||
+                        CheaksUtils.isCorrectTrim(matrix[1], str)
         );
 
         if (!event.isCancelled() || color != null) {
 
             new BukkitRunnable() {
+
                 @Override
                 public void run() {
-                    for (ItemStack i : inv) {
-                        if (i != null) {
-                            pl.getLogger().info(i.toString());
-                            if (CheaksUtils.isSword(i.getType())) {
-                                pl.getLogger().info("DEBUG isSword");
-                                if (!Objects.requireNonNull(i.getItemMeta()).hasCustomModelData()) {
-                                    pl.getLogger().info("DEBUG hasCustomTexture");
-                                    ColorUtils.applyColor(i, color, num);
+
+                    boolean done = false;
+
+                    while (!done) {
+                        ItemStack[] inv = player.getInventory().getStorageContents();
+
+                        for (ItemStack i : inv) {
+                            if (i != null) {
+                                if (CheaksUtils.isSword(i.getType())) {
+                                    if (!i.getItemMeta().hasCustomModelData()) {
+                                        ColorUtils.applyColor(i, color, num, pl);
+                                        done = true;
+                                    }
                                 }
                             }
                         }
                     }
                 }
-            }.runTaskLater(pl, 5L);
-
-
+            }.runTaskLaterAsynchronously(pl, 60);
         }
-
-
     }
 
     @EventHandler
@@ -89,4 +88,6 @@ public abstract class ItemClass implements Listener {
     }
 
     protected abstract void run(Player player, ItemStack item);
+
 }
+
