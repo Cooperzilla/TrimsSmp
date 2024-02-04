@@ -20,7 +20,7 @@ public class Smithing {
                 new NamespacedKey("trimssmp", "neth_sword_smith"),
                 new ItemStack(Material.NETHERITE_SWORD),
                 new RecipeChoice.MaterialChoice(Tag.ITEMS_TRIM_TEMPLATES),
-                new RecipeChoice.MaterialChoice(Tag.ITEMS_SWORDS),
+                new RecipeChoice.MaterialChoice(Material.NETHERITE_SWORD),
                 new RecipeChoice.MaterialChoice(Tag.ITEMS_TRIM_MATERIALS));
     }
 
@@ -29,7 +29,7 @@ public class Smithing {
                 new NamespacedKey("trimssmp", "gold_sword_smith"),
                 new ItemStack(Material.GOLDEN_SWORD),
                 new RecipeChoice.MaterialChoice(Tag.ITEMS_TRIM_TEMPLATES),
-                new RecipeChoice.MaterialChoice(Tag.ITEMS_SWORDS),
+                new RecipeChoice.MaterialChoice(Material.GOLDEN_SWORD),
                 new RecipeChoice.MaterialChoice(Tag.ITEMS_TRIM_MATERIALS));
     }
 
@@ -38,7 +38,7 @@ public class Smithing {
                 new NamespacedKey("trimssmp", "iron_sword_smith"),
                 new ItemStack(Material.IRON_SWORD),
                 new RecipeChoice.MaterialChoice(Tag.ITEMS_TRIM_TEMPLATES),
-                new RecipeChoice.MaterialChoice(Tag.ITEMS_SWORDS),
+                new RecipeChoice.MaterialChoice(Material.IRON_SWORD),
                 new RecipeChoice.MaterialChoice(Tag.ITEMS_TRIM_MATERIALS));
     }
 }

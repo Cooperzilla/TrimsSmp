@@ -9,11 +9,11 @@ public class NumUtils {
         }
     }
 
-    public static long seconds(int num) {
-        return num * 20L;
+    public static int seconds(int num) {
+        return num * 20;
     }
 
-    public static long minutes(int num) {
-        return (long) num * 60 * 20;
+    public static int minutes(int num) {
+        return num * 60 * 20;
     }
 }

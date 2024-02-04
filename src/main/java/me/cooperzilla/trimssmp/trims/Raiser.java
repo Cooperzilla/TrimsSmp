@@ -12,7 +12,6 @@ public class Raiser extends ItemClass {
         super(NumUtils.getNum(4), NumUtils.seconds(8), "raiser_cooldown", pl);
     }
 
-
     @Override
     protected void run(Player player, ItemStack item) {
         player.setVelocity(player.getLocation().getDirection().multiply(1.5));

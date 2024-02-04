@@ -50,6 +50,7 @@ public class ColorUtils {
 
 
         ItemMeta meta = item.getItemMeta();
+        assert meta != null;
         meta.setCustomModelData(num + offset);
         item.setItemMeta(meta);
     }

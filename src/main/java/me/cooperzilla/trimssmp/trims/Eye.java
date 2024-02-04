@@ -15,6 +15,6 @@ public class Eye extends ItemClass {
 
     @Override
     protected void run(Player player, ItemStack item) {
-        player.launchProjectile(EnderPearl.class, player.getLocation().getDirection());
+        player.launchProjectile(EnderPearl.class, player.getLocation().getDirection().multiply(1.5));
     }
 }

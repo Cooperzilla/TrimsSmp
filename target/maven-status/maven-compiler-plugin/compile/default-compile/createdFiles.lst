@@ -1,3 +1,4 @@
+me\cooperzilla\trimssmp\trims\Silence$1.class
 me\cooperzilla\trimssmp\trims\Wayfinder.class
 me\cooperzilla\trimssmp\misc\DeathListener.class
 me\cooperzilla\trimssmp\crafting\Smithing.class
@@ -5,16 +6,22 @@ me\cooperzilla\trimssmp\utils\ItemClass$1.class
 me\cooperzilla\trimssmp\trims\Eye.class
 me\cooperzilla\trimssmp\trims\Wild.class
 me\cooperzilla\trimssmp\misc\CustomArrow.class
+me\cooperzilla\trimssmp\trims\Shaper.class
+me\cooperzilla\trimssmp\trims\Host$1.class
+me\cooperzilla\trimssmp\trims\Host.class
+me\cooperzilla\trimssmp\trims\Silence.class
 me\cooperzilla\trimssmp\utils\ColorUtils$1.class
 me\cooperzilla\trimssmp\TrimsSmp.class
 me\cooperzilla\trimssmp\trims\Spire.class
 me\cooperzilla\trimssmp\utils\CooldownUtils$1.class
 me\cooperzilla\trimssmp\trims\Rib.class
 me\cooperzilla\trimssmp\utils\ColorUtils.class
+me\cooperzilla\trimssmp\trims\Vex.class
 me\cooperzilla\trimssmp\trims\Raiser.class
 me\cooperzilla\trimssmp\utils\CheaksUtils.class
 me\cooperzilla\trimssmp\trims\Ward.class
 me\cooperzilla\trimssmp\utils\CooldownUtils.class
+me\cooperzilla\trimssmp\trims\Tide.class
 me\cooperzilla\trimssmp\misc\DebugCmd.class
 me\cooperzilla\trimssmp\trims\Sentry.class
 me\cooperzilla\trimssmp\misc\LimitCheaks.class

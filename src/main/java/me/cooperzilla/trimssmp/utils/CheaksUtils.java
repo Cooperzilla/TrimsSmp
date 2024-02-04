@@ -3,8 +3,10 @@ package me.cooperzilla.trimssmp.utils;
 import org.bukkit.Material;
 import org.bukkit.event.inventory.SmithItemEvent;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 public class CheaksUtils {
     public static boolean isOre(Material material) {
@@ -55,8 +57,8 @@ public class CheaksUtils {
         );
     }
 
-    public static boolean isCorrectTrim(ItemStack trim, String str) {
-        return trim.getType().toString().toLowerCase().equals(str.split("_")[0]);
+    public static boolean isCorrectTrim(ItemStack trim, String str, JavaPlugin pl) {
+        return Objects.equals(trim.getType().toString().toLowerCase().split("_")[0], str.split("_")[0]);
     }
 
 }

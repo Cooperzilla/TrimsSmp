@@ -2,11 +2,10 @@ Adds trimmed swords recreation of a plugin from a yt video im not bothered enoug
 
 
 # Dev notes / todo
-
-## Higher Priority
-- Fix Smithing Recipe Event in ItemClass
-
-## Lower Priority
-- Add Last Trims
 - Upgrade Ward ability
-- Better water cheaks for coast
+- fix spire ability
+- fix other sword types trimming
+- fix sword limit cheakers
+- dragon egg power
+- time dial
+- tbd
